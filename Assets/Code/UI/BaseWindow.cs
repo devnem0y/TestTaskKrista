@@ -15,7 +15,7 @@ public abstract class BaseWindow : MonoBehaviour
 
     public void Show(params object[] args)
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(true); //TODO: Поидеи объект включить сам себя не может если он неактивен. Починил этот момент.
         
         OnShow(args);
     }

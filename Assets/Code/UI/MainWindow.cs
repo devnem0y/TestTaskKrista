@@ -46,7 +46,8 @@ public class MainWindow : BaseWindow
 
     private void Inventory1()
     {
-        Get<RewardsWindow>().Show("Reward 1", new List<InventoryItem>()
+        var window = Get<RewardsWindow>();
+        window.Show("Reward 1", new List<InventoryItem>()
         {
             new(MakeTitle(1), MakeDesc(1), _icons[Random.Range(0, _icons.Length)]),
             new(MakeTitle(2), MakeDesc(2), _icons[Random.Range(0, _icons.Length)]),
@@ -59,16 +60,19 @@ public class MainWindow : BaseWindow
             new(MakeTitle(9), MakeDesc(9), _icons[Random.Range(0, _icons.Length)]),
             new(MakeTitle(10), MakeDesc(10), _icons[Random.Range(0, _icons.Length)]),
         });
+        window.gameObject.SetActive(true);
     }
 
 
     private void Inventory2()
     {
-        Get<RewardsWindow>().Show("Rewards From Other Place", new List<InventoryItem>()
-            {
-                new(MakeTitle(1), MakeDesc(1), _icons[Random.Range(0, _icons.Length)]),
-                new(MakeTitle(2), MakeDesc(2), _icons[Random.Range(0, _icons.Length)]),
-                new(MakeTitle(3), MakeDesc(3), _icons[Random.Range(0, _icons.Length)]),
-            });
+        var window = Get<RewardsWindow>();
+        window.Show("Rewards From Other Place", new List<InventoryItem>()
+        {
+            new(MakeTitle(1), MakeDesc(1), _icons[Random.Range(0, _icons.Length)]),
+            new(MakeTitle(2), MakeDesc(2), _icons[Random.Range(0, _icons.Length)]),
+            new(MakeTitle(3), MakeDesc(3), _icons[Random.Range(0, _icons.Length)]),
+        });
+        window.gameObject.SetActive(true);
     }
 }
